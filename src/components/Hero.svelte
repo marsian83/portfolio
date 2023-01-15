@@ -2,20 +2,21 @@
   import { onMount } from "svelte";
   import NameAnimation from "./NameAnimation.svelte";
   import CyclingText from "./CyclingText.svelte";
+  import FluidSim from "./FluidSim.svelte";
 
-  function updateGradient(event){
+  function updateGradient(event) {
     const dist = Math.sqrt(
-        Math.pow(window.innerWidth / 2 - event.clientX, 2) +
-          Math.pow(window.innerHeight / 2 - (event.clientY + window.scrollY), 2)
-      );
-      const maxDist = Math.sqrt(
-        Math.pow(window.innerWidth / 2 - 0, 2) +
-          Math.pow(window.innerHeight / 2 - 0, 2)
-      );
-      const size = 40 - 25 * (dist / maxDist);
-      document
-        .getElementById("gradient")
-        .style.setProperty("--size", `${size}vw`);
+      Math.pow(window.innerWidth / 2 - event.clientX, 2) +
+        Math.pow(window.innerHeight / 2 - (event.clientY + window.scrollY), 2)
+    );
+    const maxDist = Math.sqrt(
+      Math.pow(window.innerWidth / 2 - 0, 2) +
+        Math.pow(window.innerHeight / 2 - 0, 2)
+    );
+    const size = 40 - 25 * (dist / maxDist);
+    document
+      .getElementById("gradient")
+      .style.setProperty("--size", `${size}vw`);
   }
 
   onMount(() => {
@@ -26,6 +27,22 @@
 <section
   class="hero h-screen flex flex-col justify-center items-center bg-background"
 >
+  <section class="relative overflow-hidden h-screen">
+  <div
+    class="absolute w-full h-3/6 top-0 pointer-events-none"
+    style="background-image: linear-gradient(rgb(var(--background)),transparent);"
+  />
+  <div
+    class="absolute w-full h-3/6 bottom-0 pointer-events-none"
+    style="background-image: linear-gradient(transparent, rgb(var(--background)));"
+  />
+  <div class="absolute text-center w-full top-1/2 pointer-events-none">
+    <h1 class="text-primary mix-blend-difference text-6xl font-black">I LOVE INTERACTIVE WEB DESIGN</h1>
+  </div>
+</section>
+  <div class="h-full w-full fadeout">
+    <FluidSim />
+  </div>
   <div
     class="absolute mx-auto my-auto overflow-hidden w-full h-full flex justify-center items-center"
   >
@@ -83,5 +100,19 @@
     filter: blur(calc(var(--size) / 5));
     animation: rotate var(--speed) var(--easing) alternate infinite;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  .fadeout {
+    opacity: 0;
+    animation: fade-out 2000ms;
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
 </style>
