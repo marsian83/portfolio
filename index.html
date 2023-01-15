@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spandan Barve</title>
+  </head>
+  <body>
+    <div id="app" />
+    <script type="module" src="/src/main.js"></script>
+
+    <!-- Blobity -->
+    <script src="https://cdn.blobity.dev/by.js"></script>
+    <script>
+      const blobity = new Blobity({
+        licenseKey: "...",
+        dotColor: "#ff0266",
+        mode: "bouncy",
+        zIndex: 0,
+        invert: 0,
+        focusableElements:
+          "[data-blobity], a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip], .blobity-magnetic, .magnetic-svg--individual-paths path",
+      });
+    </script>
+  </body>
+</html>

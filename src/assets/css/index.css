@@ -1,0 +1,36 @@
+@import url("./globals.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
+* {
+  font-family: "Nunito", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: rgb(var(--background));
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--text-primary));
+  animation: anim-gradient 500ms;
+}
+
+/* Scrollbar hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--primary));
+}
+
+@keyframes anim-gradient {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #0ff;
+  }
+}
