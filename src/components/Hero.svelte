@@ -27,19 +27,6 @@
 <section
   class="hero h-screen flex flex-col justify-center items-center bg-background"
 >
-  <section class="relative overflow-hidden h-screen">
-  <div
-    class="absolute w-full h-3/6 top-0 pointer-events-none"
-    style="background-image: linear-gradient(rgb(var(--background)),transparent);"
-  />
-  <div
-    class="absolute w-full h-3/6 bottom-0 pointer-events-none"
-    style="background-image: linear-gradient(transparent, rgb(var(--background)));"
-  />
-  <div class="absolute text-center w-full top-1/2 pointer-events-none">
-    <h1 class="text-primary mix-blend-difference text-6xl font-black">I LOVE INTERACTIVE WEB DESIGN</h1>
-  </div>
-</section>
   <div class="h-full w-full fadeout">
     <FluidSim />
   </div>
