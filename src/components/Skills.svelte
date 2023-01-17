@@ -1,9 +1,8 @@
 <script>
-  import { claim_svg_element } from "svelte/internal";
   import Spacer from "./Spacer.svelte";
 
   let theme, skillShadow;
-  const defaultTheme = "#003662";
+  const defaultTheme = "#455A64";
   $: theme = defaultTheme;
   $: skillShadow = "#222";
 
@@ -67,43 +66,81 @@
   function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
   }
-
+  
   const skills = [
-    { name: "Bash", imageUrl: "/skills/bash.webp" },
-    { name: "Bootstrap", imageUrl: "/skills/bootstrap.webp" },
-    { name: "C#", imageUrl: "/skills/c-sharp.webp" },
-    { name: "C++", imageUrl: "/skills/c++.webp" },
-    { name: "CSS", imageUrl: "/skills/css.webp" },
-    { name: "django", imageUrl: "/skills/django.webp" },
-    { name: "express", imageUrl: "/skills/express.webp" },
-    { name: "fastapi", imageUrl: "/skills/fastapi.webp" },
-    { name: "firebase", imageUrl: "/skills/firebase.webp" },
-    { name: "go", imageUrl: "/skills/go.webp" },
-    { name: "hardhat", imageUrl: "/skills/hardhat.webp" },
-    { name: "html", imageUrl: "/skills/html.webp" },
-    { name: "js", imageUrl: "/skills/js.webp" },
-    { name: "mysql", imageUrl: "/skills/mysql.webp" },
-    { name: "next", imageUrl: "/skills/next.webp" },
-    { name: "nodejs", imageUrl: "/skills/nodejs.webp" },
-    { name: "nuxt", imageUrl: "/skills/nuxt.webp" },
-    { name: "postgre", imageUrl: "/skills/postgre.webp" },
+    { name: "c", imageUrl: "/skills/c.webp" },
+    { name: "c++", imageUrl: "/skills/c++.webp" },
     { name: "python", imageUrl: "/skills/python.webp" },
-    { name: "react", imageUrl: "/skills/react.webp" },
-    { name: "rust", imageUrl: "/skills/rust.webp" },
-    { name: "sass", imageUrl: "/skills/sass.webp" },
-    { name: "solidity", imageUrl: "/skills/solidity.webp" },
-    { name: "svelte", imageUrl: "/skills/svelte.webp" },
-    { name: "tailwind", imageUrl: "/skills/tailwind.webp" },
+    { name: "c-sharp", imageUrl: "/skills/c-sharp.webp" },
+    { name: "html", imageUrl: "/skills/html.webp" },
+    { name: "css", imageUrl: "/skills/css.webp" },
+    { name: "js", imageUrl: "/skills/js.webp" },
     { name: "typescript", imageUrl: "/skills/typescript.webp" },
+    { name: "vite", imageUrl: "/skills/vite.webp" },
+    { name: "bootstrap", imageUrl: "/skills/bootstrap.webp" },
+    { name: "sass", imageUrl: "/skills/sass.webp" },
+    { name: "tailwind", imageUrl: "/skills/tailwind.webp" },
+    { name: "svelte", imageUrl: "/skills/svelte.webp" },
+    { name: "react", imageUrl: "/skills/react.webp" },
     { name: "vue", imageUrl: "/skills/vue.webp" },
+    { name: "nuxt", imageUrl: "/skills/nuxt.webp" },
+    { name: "nodejs", imageUrl: "/skills/nodejs.webp" },
+    { name: "flask", imageUrl: "/skills/flask.webp" },
+    { name: "express", imageUrl: "/skills/express.webp" },
+    { name: "next", imageUrl: "/skills/next.webp" },
+    { name: "django", imageUrl: "/skills/django.webp" },
+    { name: "fastapi", imageUrl: "/skills/fastapi.webp" },
+    { name: "mysql", imageUrl: "/skills/mysql.webp" },
+    { name: "mongoDB", imageUrl: "/skills/mongoDB.webp" },
+    { name: "postgre", imageUrl: "/skills/postgre.webp" },
+    { name: "cassandra", imageUrl: "/skills/cassandra.webp" },
+    { name: "redis", imageUrl: "/skills/redis.webp" },
+    { name: "postman", imageUrl: "/skills/postman.webp" },
+    { name: "trpc", imageUrl: "/skills/trpc.webp" },
+    { name: "graphql", imageUrl: "/skills/graphql.webp" },
+    { name: "go", imageUrl: "/skills/go.webp" },
+    { name: "ganache", imageUrl: "/skills/ganache.webp" },
+    { name: "solidity", imageUrl: "/skills/solidity.webp" },
+    { name: "ethers", imageUrl: "/skills/ethers.webp" },
+    { name: "rust", imageUrl: "/skills/rust.webp" },
+    { name: "threejs", imageUrl: "/skills/threejs.webp" },
+    { name: "web3js", imageUrl: "/skills/web3js.webp" },
+    { name: "ipfs", imageUrl: "/skills/ipfs.webp" },
+    { name: "jest", imageUrl: "/skills/jest.webp" },
+    { name: "chainlink", imageUrl: "/skills/chainlink.webp" },
+    { name: "realm", imageUrl: "/skills/realm.webp" },
+    { name: "hardhat", imageUrl: "/skills/hardhat.webp" },
+    { name: "truffle", imageUrl: "/skills/truffle.webp" },
+    { name: "Amazon Web Services", imageUrl: "/skills/aws.webp" },
+    { name: "firebase", imageUrl: "/skills/firebase.webp" },
+    { name: "bash", imageUrl: "/skills/bash.webp" },
+    { name: "chai", imageUrl: "/skills/chai.webp" },
+    { name: "redux", imageUrl: "/skills/redux.webp" },
+    { name: "docker", imageUrl: "/skills/docker.webp" },
+    { name: "framerMotion", imageUrl: "/skills/framerMotion.webp" },
+    { name: "kubernetes", imageUrl: "/skills/kubernetes.webp" },
+    { name: "gcp", imageUrl: "/skills/gcp.webp" },
+    { name: "git", imageUrl: "/skills/git.webp" },
+    { name: "github", imageUrl: "/skills/github.webp" },
+    { name: "githubActions", imageUrl: "/skills/githubActions.webp" },
+    { name: "gitlab", imageUrl: "/skills/gitlab.webp" },
+    { name: "netlify", imageUrl: "/skills/netlify.webp" },
+    { name: "replit", imageUrl: "/skills/replit.webp" },
+    { name: "heroku", imageUrl: "/skills/heroku.webp" },
+    { name: "vercel", imageUrl: "/skills/vercel.webp" },
+    { name: "markdown", imageUrl: "/skills/markdown.webp" },
+    { name: "Adobe Photoshop", imageUrl: "/skills/photoshop.webp" },
+    { name: "figma", imageUrl: "/skills/figma.webp" },
+    { name: "sqlite", imageUrl: "/skills/sqlite.webp" },
+    { name: "ubuntu", imageUrl: "/skills/ubuntu.webp" },
   ];
 </script>
 
 <div class="h-16 bg-background" />
 <Spacer flip startColor={theme} endColor="#111826" />
 <section
-  class="skills p-page z-[2]"
-  style="background-color: {theme}; transition:800ms;"
+class="skills p-page z-[2]"
+style="background-color: {theme}; transition:800ms;"
 >
   <h1
     class="transition-300 text-3xl font-semibold text-center"
@@ -112,11 +149,11 @@
     Tech I've worked with
   </h1>
   <div
-    class="skills-container flex flex-row justify-evenly flex-wrap py-8 gap-x-10 gap-y-16"
+    class="skills-container flex flex-row justify-evenly flex-wrap py-8 gap-x-10 gap-y-10"
   >
     {#each skills as skill}
       <img
-        class="skill-icon w-20 aspect-square object-contain"
+        class="skill-icon w-14 aspect-square object-contain"
         style="--skill-shadow:{getVisibleColor(theme)};"
         src={skill.imageUrl}
         alt={skill.name}
@@ -128,6 +165,7 @@
         on:mouseleave={() => {
           theme = defaultTheme;
         }}
+        draggable="false"
       />
     {/each}
   </div>

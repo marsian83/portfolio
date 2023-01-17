@@ -1,10 +1,10 @@
 <script>
   import { onMount } from "svelte";
 
-  let sect;
+  let sect, c;
 
   onMount(() => {
-    const canvas = sect.getElementsByTagName("canvas")[0];
+    const canvas = c; //sect.getElementsByTagName("canvas")[0];
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
 
@@ -896,9 +896,9 @@
     <h1 class="text-primary mix-blend-difference text-6xl font-black">I LOVE INTERACTIVE WEB DESIGN</h1>
   </div>
 </section> -->
-<div bind:this={sect} class="sect relative overflow-hidden w-full h-full">
-  <canvas class="-z-[1] w-full h-full" />
-</div>
+<!-- <div bind:this={sect} class="sect relative overflow-hidden w-full h-full"> -->
+  <canvas bind:this={c} class="absolute w-full h-full" />
+<!-- </div> -->
 
 <style>
 </style>
