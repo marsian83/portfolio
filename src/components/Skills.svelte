@@ -153,7 +153,7 @@ style="background-color: {theme}; transition:800ms;"
   >
     {#each skills as skill}
       <img
-        class="skill-icon skewElem w-14 aspect-square object-contain"
+        class="skill-icon w-14 aspect-square object-contain"
         style="--skill-shadow:{getVisibleColor(theme)};"
         src={skill.imageUrl}
         alt={skill.name}
