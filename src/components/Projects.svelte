@@ -2,12 +2,14 @@
   import { onMount } from "svelte";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
+  import { each } from "svelte/internal";
   // import Flip from "gsap/Flip";
 
   gsap.registerPlugin(ScrollTrigger);
   // gsap.registerPlugin(Flip);
 
-  let sect;
+  let sect,
+    projects = [];
 
   onMount(() => {
     gsap
@@ -93,8 +95,8 @@
         scrollTrigger: {
           trigger: ".projects-heading",
           pin: false,
-          start: "top 10%",
-          // end: `+=10vh`, // end after scrolling 500px beyond the start
+          start: "top 15%",
+          end: `+=80px`,
           scrub: 1,
           snap: {
             snapTo: "labels",
@@ -107,12 +109,20 @@
       .addLabel("start")
       .from(".laptop-screen, .mobile-screen", {
         opacity: 0,
-        filter: "brightness(5)",
-      })
-      .addLabel("end")
-      .to(".laptop-screen, .mobile-screen", {
-        opacity: 1,
-        filter: "brightness(1)",
+        filter: "blur(1rem)",
+      });
+    // .addLabel("end")
+    // .to(".laptop-screen, .mobile-screen", {
+    //   opacity: 1,
+    //   filter: "brightness(1)",
+    // });
+  });
+
+  onMount(async () => {
+    fetch("/projects.json")
+      .then((response) => response.json())
+      .then((projectsData) => {
+        projects = projectsData;
       });
   });
 </script>
@@ -128,6 +138,9 @@
     >
       Notable Projects
     </div>
+    {#each projects as project}
+      <span class="text-primary">{project.name || "naam nai hai"}</span>
+    {/each}
     <div class="project-card h-48 bg-red-500" />
     <div class="project-card h-48 bg-green-500" />
     <div class="project-card h-48 bg-red-500" />

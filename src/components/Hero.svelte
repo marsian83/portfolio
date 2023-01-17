@@ -35,10 +35,10 @@
   >
     <div class=" mx-auto my-auto gradient opacity-70" id="gradient" />
   </div>
-  <div class="z-[1] absolute ">
+  <div class="z-[1] absolute">
     <NameAnimation />
   </div>
-  <div class="absolute bottom-16 flex flex-col text-primary text-3xl font-bold">
+  <div class="skewElem absolute bottom-16 flex flex-col text-primary text-3xl font-bold">
     <h1>I'm a student at IIIT Gwalior</h1>
     <h1 class="flex flex-row gap-3">
       <span>and</span> <span>a</span>
