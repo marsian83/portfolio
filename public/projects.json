@@ -1,9 +1,57 @@
 [
   {
-    "name": "MarsFood"
+    "name": "MarsFood",
+    "technology": "Node webapp",
+    "highlights": [
+      "MarsFood is an end to end food delivery app catered to both consumers and restaurants.",
+      "Implemented a full fledged authentication system based on session cookies with vanilla NodeJs and Express.",
+      "Developed responsive frontend for multiple viewports using Vanilla HTML, CSS and JavaScript."
+    ],
+    "source": {
+      "type": "github",
+      "url": "https://www.github.com/marsian83/marsfood"
+    },
+    "demo": {
+      "type": "website",
+      "url": "https://bit.ly/marsfood",
+      "tooltip": "view the live site"
+    },
+    "gallery":[]
   },
   {
-    "name":"ShantiTrip"
+    "name": "MarsFood",
+    "technology": "Node webapp",
+    "highlights": [
+      "MarsFood is an end to end food delivery app catered to both consumers and restaurants.",
+      "Implemented a full fledged authentication system based on session cookies with vanilla NodeJs and Express.",
+      "Developed responsive frontend for multiple viewports using Vanilla HTML, CSS and JavaScript."
+    ],
+    "source": {
+      "type": "github",
+      "url": "https://www.github.com/marsian83/marsfood"
+    },
+    "demo": {
+      "type": "website",
+      "url": "https://bit.ly/marsfood",
+      "tooltip": "view the live site"
+    }
   },
-  {}
+  {
+    "name": "MarsFood",
+    "technology": "Node webapp",
+    "highlights": [
+      "MarsFood is an end to end food delivery app catered to both consumers and restaurants.",
+      "Implemented a full fledged authentication system based on session cookies with vanilla NodeJs and Express.",
+      "Developed responsive frontend for multiple viewports using Vanilla HTML, CSS and JavaScript."
+    ],
+    "source": {
+      "type": "github",
+      "url": "https://www.github.com/marsian83/marsfood"
+    },
+    "demo": {
+      "type": "website",
+      "url": "bit.ly/marsfood",
+      "tooltip": "view the live site"
+    }
+  }
 ]

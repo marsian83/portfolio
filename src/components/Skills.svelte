@@ -1,7 +1,12 @@
 <script>
+  import { onMount } from "svelte";
   import Spacer from "./Spacer.svelte";
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
 
-  let theme, skillShadow;
+  gsap.registerPlugin(ScrollTrigger);
+
+  let theme, skillsContainer;
   const defaultTheme = "#455A64";
   $: theme = defaultTheme;
   $: skillShadow = "#222";
@@ -40,19 +45,15 @@
   }
 
   function getVisibleColor(color) {
-    // Parse the color into its RGB components
     let r = parseInt(color.substring(1, 3), 16);
     let g = parseInt(color.substring(3, 5), 16);
     let b = parseInt(color.substring(5, 7), 16);
 
-    // Calculate the color's brightness
     let brightness = (r * 299 + g * 587 + b * 114) / 1000;
 
-    // If the color is dark, return white text
     if (brightness < 128) {
       return "#FFFFFF";
     }
-    // If the color is light, return black text
     else {
       return "#000000";
     }
@@ -66,7 +67,7 @@
   function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
   }
-  
+
   const skills = [
     { name: "c", imageUrl: "/skills/c.webp" },
     { name: "c++", imageUrl: "/skills/c++.webp" },
@@ -134,13 +135,30 @@
     { name: "sqlite", imageUrl: "/skills/sqlite.webp" },
     { name: "ubuntu", imageUrl: "/skills/ubuntu.webp" },
   ];
+
+  onMount(() => {
+    const skillStateHide = { filter :  'blur(1rem)' };
+    const skillStateShow = { filter : 'blur(0)' };
+    ScrollTrigger.batch(".skill-icon", {
+      interval: 0.5,
+      batchMax: 4,
+      onEnter: (batch) =>
+        gsap.to(batch, { ...skillStateShow, stagger: 0.15, overwrite: true }),
+      onLeave: (batch) =>
+        gsap.set(batch, { ...skillStateHide, overwrite: true }),
+      onEnterBack: (batch) =>
+        gsap.to(batch, { ...skillStateShow, stagger: 0.15, overwrite: true }),
+      onLeaveBack: (batch) =>
+        gsap.set(batch, { ...skillStateHide, overwrite: true }),
+    });
+  });
 </script>
 
 <div class="h-16 bg-background" />
 <Spacer flip startColor={theme} endColor="#111826" />
 <section
-class="skills p-page z-[2]"
-style="background-color: {theme}; transition:800ms;"
+  class="skills p-page z-[2]"
+  style="background-color: {theme}; transition:800ms;"
 >
   <h1
     class="transition-300 text-3xl font-semibold text-center"
@@ -149,6 +167,7 @@ style="background-color: {theme}; transition:800ms;"
     Tech I've worked with
   </h1>
   <div
+    bind:this={skillsContainer}
     class="skills-container flex flex-row justify-evenly flex-wrap py-8 gap-x-10 gap-y-10"
   >
     {#each skills as skill}
