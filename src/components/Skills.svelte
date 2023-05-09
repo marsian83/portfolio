@@ -161,7 +161,7 @@
         alt={skill.name}
         data-blobity-tooltip={skill.name}
         on:mouseover={async () => {
-          theme = skill.color != "#" || (await getAverageColor(skill.imageUrl));
+          theme = skill.color != "#" ? skill.color : (await getAverageColor(skill.imageUrl));
         }}
         on:focus={() => {}}
         on:mouseleave={() => {
