@@ -17,6 +17,47 @@
     gsap
       .timeline({
         scrollTrigger: {
+          trigger: ".mobile",
+          pin: false,
+          start: "top bottom",
+          end: `+=${window.innerHeight}px`,
+          scrub: 1,
+          onUpdate: (self) => {
+            if (self.direction === -1) {
+              document.querySelector(".mobile").vanillaTilt.destroy();
+            }
+          },
+        },
+        onComplete: () => {
+          VanillaTilt.init(document.querySelector(".mobile"), {
+            max: maxTilt,
+            speed: 20,
+            reverse: true,
+            "full-page-listening": true,
+          });
+        },
+      })
+      .addLabel("start")
+      .fromTo(
+        ".mobile",
+        {
+          scale: 0,
+          translateY: "-100vh",
+          translateX: "-25vw",
+          rotateY: 720,
+          rotateZ: -50,
+        },
+        {
+          scale: 1,
+          rotateY: 0,
+          rotateZ: 0,
+        }
+      )
+      .addLabel("end")
+      .to(".mobile", { translateY: 0, translateX: 0 });
+    gsap
+      .timeline({
+        scrollTrigger: {
           trigger: ".laptop",
           pin: false,
           start: "top bottom",
@@ -174,7 +215,7 @@
   </div>
   <div class="relative basis-1/2">
     <div
-      class="previews sticky top-0 left-1/2 text-primary flex flex-col justify-center items-center h-screen"
+      class="previews sticky top-0 left-1/2 text-primary flex flex-col justify-center items-center"
     >
       <div
         data-tilt
@@ -186,18 +227,27 @@
           alt="laptop-screen"
         />
       </div>
+      <div class="mobile w-5/12 z-[1] bg-contain bg-[url('/mobile.png')]">
+        <img
+          class="mobile-screen"
+          src="/screens/mobile-default.png"
+          alt="mobile-screen"
+        />
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  .mobile,
   .laptop {
     /* filter: drop-shadow(0px 0px 1rem black); */
     transform-style: preserve-3d;
     transform: perspective(1000px);
   }
 
-  .laptop-screen {
+  .laptop-screen,
+  .mobile-screen {
     @apply w-full;
     transform: translateZ(20px);
   }
