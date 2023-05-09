@@ -11,6 +11,18 @@
 
   let sect,
     projects = [];
+  async function getAspectRatio(src) {
+    return new Promise((resolve) => {
+      let context = document.createElement("canvas").getContext("2d");
+      context.imageSmoothingEnabled = true;
+      let img = new Image();
+      img.src = src;
+      img.crossOrigin = "";
+      img.onload = () => {
+        resolve(img.width / img.height);
+      };
+    });
+  }
 
   onMount(() => {
     let maxTilt = 15;
@@ -120,7 +132,15 @@
     // });
   });
 
-  // onMount(() => {});
+  let setLaptopScreen;
+
+  onMount(() => {
+    const laptopScreen = document.querySelector(".laptop-screen");
+
+    setLaptopScreen = (screen) => {
+      laptopScreen.src = `/screens/laptop/${screen}.webp`;
+    };
+  });
 
   onMount(async () => {
     await fetch("/projects.json")
@@ -161,6 +181,15 @@
         opacity: 1,
       });
   });
+
+  onMount(async () => {
+    document.querySelector(".laptop").style.aspectRatio = await getAspectRatio(
+      "/laptop.png"
+    );
+    document.querySelector(".mobile").style.aspectRatio = await getAspectRatio(
+      "/mobile.png"
+    );
+  });
 </script>
 
 <div class="h-screen bg-background" />
@@ -176,7 +205,11 @@
     </div>
     <div class="projects flex flex-col items-center gap-y-8 py-8">
       {#each projects as project}
-        <div class="project-card text-primary flex flex-col gap-y-10">
+        <div
+          class="project-card text-primary flex flex-col gap-y-10"
+          on:mouseenter={setLaptopScreen(project.name.toLowerCase())}
+          on:mouseleave={setLaptopScreen("default")}
+        >
           <div
             class="project-heading flex flex-row justify-between items-center"
           >
@@ -222,16 +255,19 @@
         class="laptop w-9/12 z-0 bg-contain bg-[url('/laptop.png')]"
       >
         <img
-          class="laptop-screen"
+          class="laptop-screen ml-[12.8%] w-[76.4%] mt-[16.4%] h-[50%] bg-cyan-500 object-cover"
           src="/screens/laptop-default.png"
           alt="laptop-screen"
+          on:error={setLaptopScreen("default")}
+          draggable="false"
         />
       </div>
       <div class="mobile w-5/12 z-[1] bg-contain bg-[url('/mobile.png')]">
         <img
-          class="mobile-screen"
+          class="mobile-screen ml-[28.6%] w-[42.6%] mt-[12.6%] h-[73.5%] bg-cyan-500"
           src="/screens/mobile-default.png"
           alt="mobile-screen"
+          draggable="false"
         />
       </div>
     </div>
@@ -248,7 +284,6 @@
 
   .laptop-screen,
   .mobile-screen {
-    @apply w-full;
     transform: translateZ(20px);
   }
 

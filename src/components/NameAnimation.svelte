@@ -10,7 +10,13 @@
         "--total-length",
         namePaths[i].getTotalLength()
       );
-      namePaths[i].style.setProperty("--anim-delay", `${i * 100}ms`);
+      namePaths[i].style.setProperty("--anim-delay", `${i * 200}ms`);
+      namePaths[i].addEventListener('mouseenter',()=>{
+        namePaths[i].style.transform=`rotate(${Math.random()*2*(Math.random()<0.5?-1:1)}deg)`
+      })
+      namePaths[i].addEventListener('mouseleave',()=>{
+        namePaths[i].style.transform='rotate(0deg)'
+      })
     }
   });
 </script>
@@ -165,6 +171,8 @@
       stay-hidden var(--anim-delay);
     stroke-dasharray: 0;
     stroke-dashoffset: 0;
+    transform-origin: center;
+    transition: transform 300ms;
   }
 
   @keyframes line-anim {

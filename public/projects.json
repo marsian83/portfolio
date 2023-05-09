@@ -15,11 +15,10 @@
       "type": "website",
       "url": "https://bit.ly/marsfood",
       "tooltip": "view the live site"
-    },
-    "gallery":[]
+    }
   },
   {
-    "name": "MarsFood",
+    "name": "koi project bina img ka",
     "technology": "Node webapp",
     "highlights": [
       "MarsFood is an end to end food delivery app catered to both consumers and restaurants.",

@@ -6,6 +6,7 @@
   import { onMount } from "svelte";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
+  import BeforeAfter from "./components/BeforeAfter.svelte";
   gsap.registerPlugin(ScrollTrigger);
   
   onMount(() => {
@@ -40,6 +41,7 @@
   <Skills />
   <About />
   <Projects />
+  <BeforeAfter />
   <div class="h-screen bg-cyan-500" />
 </body>
 
