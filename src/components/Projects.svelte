@@ -11,18 +11,6 @@
 
   let sect,
     projects = [];
-  async function getAspectRatio(src) {
-    return new Promise((resolve) => {
-      let context = document.createElement("canvas").getContext("2d");
-      context.imageSmoothingEnabled = true;
-      let img = new Image();
-      img.src = src;
-      img.crossOrigin = "";
-      img.onload = () => {
-        resolve(img.width / img.height);
-      };
-    });
-  }
 
   onMount(() => {
     let maxTilt = 15;
@@ -132,15 +120,7 @@
     // });
   });
 
-  let setLaptopScreen;
-
-  onMount(() => {
-    const laptopScreen = document.querySelector(".laptop-screen");
-
-    setLaptopScreen = (screen) => {
-      laptopScreen.src = `/screens/laptop/${screen}.webp`;
-    };
-  });
+  // onMount(() => {});
 
   onMount(async () => {
     await fetch("/projects.json")
@@ -152,7 +132,7 @@
       max: 5,
       speed: 20,
       glare: true,
-      "max-glare": 0.69,
+      "max-glare": 0.2,
     });
     gsap
       .timeline({
@@ -181,15 +161,6 @@
         opacity: 1,
       });
   });
-
-  onMount(async () => {
-    document.querySelector(".laptop").style.aspectRatio = await getAspectRatio(
-      "/laptop.png"
-    );
-    document.querySelector(".mobile").style.aspectRatio = await getAspectRatio(
-      "/mobile.png"
-    );
-  });
 </script>
 
 <div class="h-screen bg-background" />
@@ -203,27 +174,23 @@
     >
       Some Things I've worked on
     </div>
-    <div class="projects flex flex-col items-center gap-y-8 py-8">
+    <div class="projects flex flex-col items-center gap-y-24 py-8">
       {#each projects as project}
-        <div
-          class="project-card text-primary flex flex-col gap-y-10"
-          on:mouseenter={setLaptopScreen(project.name.toLowerCase())}
-          on:mouseleave={setLaptopScreen("default")}
-        >
+        <div class="project-card text-primary flex flex-col gap-y-8">
           <div
             class="project-heading flex flex-row justify-between items-center"
           >
             <h1 class="text-3xl font-bold">
-              {project.name || "naam de de re baba"}
+              {project.name || "Project Name"}
             </h1>
-            <h2 class="text-2xl font-semibold opacity-70">
-              {project.technology || "kaise banaya?"}
+            <h2 class="text-2xl font-semibold opacity-70 text-end">
+              {project.technology || "How it's Made"}
             </h2>
           </div>
           {#each project.highlights as highlight}
             <div class="project-highlight flex flex-row gap-x-4 items-center">
               <div
-                class="rounded-full bg-[#ffffff44] px-8 aspect-square text-3xl font-black text-primary flex justify-center items-center"
+                class="rounded-full bg-[#ffffff44] px-6 aspect-square text-3xl font-black text-primary flex justify-center items-center"
               >
                 {project.highlights.indexOf(highlight)}
               </div>
@@ -255,19 +222,16 @@
         class="laptop w-9/12 z-0 bg-contain bg-[url('/laptop.png')]"
       >
         <img
-          class="laptop-screen ml-[12.8%] w-[76.4%] mt-[16.4%] h-[50%] bg-cyan-500 object-cover"
+          class="laptop-screen"
           src="/screens/laptop-default.png"
           alt="laptop-screen"
-          on:error={setLaptopScreen("default")}
-          draggable="false"
         />
       </div>
       <div class="mobile w-5/12 z-[1] bg-contain bg-[url('/mobile.png')]">
         <img
-          class="mobile-screen ml-[28.6%] w-[42.6%] mt-[12.6%] h-[73.5%] bg-cyan-500"
+          class="mobile-screen"
           src="/screens/mobile-default.png"
           alt="mobile-screen"
-          draggable="false"
         />
       </div>
     </div>
@@ -284,12 +248,13 @@
 
   .laptop-screen,
   .mobile-screen {
+    @apply w-full;
     transform: translateZ(20px);
   }
 
   .project-card {
-    @apply w-11/12 p-5;
-    background: rgba(255, 255, 255, 0.25);
+    @apply w-11/12 p-8;
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 10px;
     transform-style: preserve-3d;
@@ -302,6 +267,6 @@
 
   .project-card:hover div {
     transform: translateZ(50px);
-    filter: drop-shadow(0px 0px 2px black);
+    /* filter: drop-shadow(0px 0px 2px black); */
   }
 </style>
