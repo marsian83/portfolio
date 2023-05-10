@@ -1,6 +1,6 @@
 <section class="relative z-0 h-screen bg-black">
   <img
-    src="https://img.freepik.com/free-vector/gradient-black-background-with-wavy-lines_23-2149157312.jpg?w=1480&t=st=1683721130~exp=1683721730~hmac=16e8ec1c6eb707932df523cfb88ed09d5b1ad92c3ffcc2201e7652dbf4de7154"
+    src="/contact_bg.jpg"
     alt="bg"
     class="absolute top-0 left-0 w-full h-full object-cover opacity-30 -z-[1]"
   />
