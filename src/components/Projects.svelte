@@ -44,9 +44,13 @@
           scale: 0,
           translateY: "-100vh",
           translateX: "-25vw",
+          rotateY: 500,
+          rotateZ: -40,
         },
         {
           scale: 1,
+          rotateY: 0,
+          rotateZ: 0,
         }
       )
       .addLabel("end")
@@ -113,11 +117,13 @@
       .from(".projects-heading, .project-card", {
         scale: 0,
         opacity: 0,
+        rotateY: (Math.random() < 0.5 ? -1 : 1) * 360,
       })
       .addLabel("end")
       .to(".projects-heading, .project-card", {
         scale: 1,
         opacity: 1,
+        rotateY: 0,
       });
   });
 </script>
@@ -157,16 +163,16 @@
             </div>
           {/each}
           <div class="text-center flex flex-row justify-between px-8">
-            <button
-              data-blobity-tooltip={project.source.tooltip ||
-                "view source code"}
-              on:click={window.open(project.source.url)}>source code</button
-            >
-            <button
-              data-blobity-tooltip={project.demo.tooltip ||
-                "preview the project"}
-              on:click={window.open(project.demo.url)}>preview</button
-            >
+            {#each [{ title: "source code", data: project.source }, { title: "preview", data: project.demo }] as item}
+              {#if project.source}
+                <button
+                  data-blobity-tooltip={item.tooltip || "view source code"}
+                  on:click={window.open(item.url)}
+                >
+                  {item.title}
+                </button>
+              {/if}
+            {/each}
           </div>
         </div>
       {/each}
@@ -209,6 +215,11 @@
     border-radius: 10px;
     transform-style: preserve-3d;
     transform: perspective(1000px);
+    transition-duration: 600ms;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 8px 64px 0 rgba(83, 38, 128, 0.38);
   }
 
   .project-card div {

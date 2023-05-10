@@ -7,6 +7,7 @@
       "Implemented a full fledged authentication system based on session cookies with vanilla NodeJs and Express.",
       "Developed responsive frontend for multiple viewports using Vanilla HTML, CSS and JavaScript."
     ],
+    "gallery": [],
     "source": {
       "type": "github",
       "url": "https://www.github.com/marsian83/marsfood"
