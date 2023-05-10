@@ -7,8 +7,9 @@
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
   import BeforeAfter from "./components/BeforeAfter.svelte";
+  import Contact from "./components/Contact.svelte";
   gsap.registerPlugin(ScrollTrigger);
-  
+
   onMount(() => {
     let proxy = { skew: 0 },
       skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg"), // fast
@@ -41,8 +42,8 @@
   <Skills />
   <About />
   <Projects />
-  <BeforeAfter />
-  <div class="h-screen bg-cyan-500" />
+  <Contact />
+  <!-- <BeforeAfter /> -->
 </body>
 
 <style>

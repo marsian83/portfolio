@@ -1,5 +1,62 @@
 [
   {
+    "name": "TrustPoint Dapp",
+    "technology": "MERN Stack Dapp",
+    "highlights": [
+      "Trustpoint allows celebrities and game studios to collaborate and create collectible NFTs through the trust of blockchain",
+      "Trustpoint has stood a winner in the EthFotAll hackathon organized by EthIndia",
+      "The smart contracts were written in solidity and were deployed on the Mantle TestNet.",
+      "MERN stack with typescript was used, talwindCSS was used as a CSS library and Prism was used as an ORM"
+    ],
+    "source": {
+      "type": "github",
+      "url": "https://www.github.com/trustpoint-dapp/core"
+    },
+    "demo": {
+      "type": "devfolio",
+      "url": "https://devfolio.co/projects/trustpoint-fca1",
+      "tooltip": "view on Devfolio"
+    }
+  },
+  {
+    "name": "ShantiTrip Holidays",
+    "technology": "MERN Stack webapp",
+    "highlights": [
+      "ShantiTrip is a full fledged tours and travel, trip booking webapp",
+      "React with TailwindCSS was used for developing frontend and Express with Prisma for backend",
+      "TypeScript was used for strict typing and ensuring bug free production environment",
+      "Firebase was used for implementing Authentication system and an Admin Panel was provided"
+    ],
+    "source": {
+      "type": "github",
+      "url": "https://www.github.com/marsian83/ideavault-website"
+    },
+    "demo": {
+      "type": "website",
+      "url": "https://www.ideavaulthk.com",
+      "tooltip": "view the live site"
+    }
+  },
+  {
+    "name": "Ideavault",
+    "technology": "React Website",
+    "highlights": [
+      "Ideavault lets you invest in vaults (indexes) based off ideas and concepts.",
+      "React was used with Vite to develop the frontend and TailwindCSS used as CSS library",
+      "TypeScript was used for strict typing and ensuring bug free production environment",
+      "Admin panel control was provided for allowing dynamically adding content by the client"
+    ],
+    "source": {
+      "type": "github",
+      "url": "https://www.github.com/marsian83/ideavault-website"
+    },
+    "demo": {
+      "type": "website",
+      "url": "https://www.ideavaulthk.com",
+      "tooltip": "view the live site"
+    }
+  },
+  {
     "name": "MarsFood",
     "technology": "Node webapp",
     "highlights": [
@@ -7,7 +64,16 @@
       "Implemented a full fledged authentication system based on session cookies with vanilla NodeJs and Express.",
       "Developed responsive frontend for multiple viewports using Vanilla HTML, CSS and JavaScript."
     ],
-    "gallery": [],
+    "gallery": [
+      "screens/laptop/marsfood/0.jpg",
+      "screens/laptop/marsfood/1.jpg",
+      "screens/laptop/marsfood/2.jpg",
+      "screens/laptop/marsfood/3.jpg",
+      "screens/laptop/marsfood/4.jpg",
+      "screens/laptop/marsfood/5.jpg",
+      "screens/laptop/marsfood/6.jpg",
+      "screens/laptop/marsfood/7.jpg"
+    ],
     "source": {
       "type": "github",
       "url": "https://www.github.com/marsian83/marsfood"
@@ -19,39 +85,21 @@
     }
   },
   {
-    "name": "koi project bina img ka",
-    "technology": "Node webapp",
+    "name": "MarsEngine",
+    "technology": "C++ Physics Engine",
     "highlights": [
-      "MarsFood is an end to end food delivery app catered to both consumers and restaurants.",
-      "Implemented a full fledged authentication system based on session cookies with vanilla NodeJs and Express.",
-      "Developed responsive frontend for multiple viewports using Vanilla HTML, CSS and JavaScript."
+      "Developed a physics engine with graphics rendering and all major physical properties",
+      "C++ was used to ensure smooth handling of heavy physics calculations",
+      "SDL2 graphics library was used to render the graphics onto the window"
     ],
     "source": {
       "type": "github",
-      "url": "https://www.github.com/marsian83/marsfood"
+      "url": "https://github.com/marsian83/MarsEngine-with-physics-simulations"
     },
     "demo": {
-      "type": "website",
-      "url": "https://bit.ly/marsfood",
-      "tooltip": "view the live site"
-    }
-  },
-  {
-    "name": "MarsFood",
-    "technology": "Node webapp",
-    "highlights": [
-      "MarsFood is an end to end food delivery app catered to both consumers and restaurants.",
-      "Implemented a full fledged authentication system based on session cookies with vanilla NodeJs and Express.",
-      "Developed responsive frontend for multiple viewports using Vanilla HTML, CSS and JavaScript."
-    ],
-    "source": {
-      "type": "github",
-      "url": "https://www.github.com/marsian83/marsfood"
-    },
-    "demo": {
-      "type": "website",
-      "url": "bit.ly/marsfood",
-      "tooltip": "view the live site"
+      "type": "desktop application",
+      "url": "https://github.com/marsian83/MarsEngine-with-physics-simulations/archive/refs/heads/main.zip",
+      "tooltip": "download the engine (C++)"
     }
   }
 ]

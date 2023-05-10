@@ -9,8 +9,15 @@
   gsap.registerPlugin(ScrollTrigger);
   // gsap.registerPlugin(Flip);
 
+  const defaultLaptopScreen = "https://wallpaperaccess.com/full/2703944.jpg";
+
   let sect,
     projects = [];
+
+  let laptopScreen = {
+    current: defaultLaptopScreen,
+    frames: [defaultLaptopScreen],
+  };
 
   onMount(() => {
     let maxTilt = 15;
@@ -51,6 +58,7 @@
           scale: 1,
           rotateY: 0,
           rotateZ: 0,
+          display: "relative",
         }
       )
       .addLabel("end")
@@ -72,15 +80,21 @@
         },
       })
       .addLabel("start")
-      .from(".laptop-screen, .mobile-screen", {
-        opacity: 0,
-        filter: "blur(1rem)",
-      });
-    // .addLabel("end")
-    // .to(".laptop-screen, .mobile-screen", {
-    //   opacity: 1,
-    //   filter: "brightness(1)",
-    // });
+      .fromTo(
+        ".laptop-screen",
+        {
+          opacity: 0,
+          filter: "blur(1rem)",
+        },
+        {
+          opacity: 1,
+          filter: "none",
+          left: `${(63 / 500) * 100}%`,
+          top: `${(79 / 476) * 100}%`,
+          width: `${(384 / 500) * 100}%`,
+          height: `${(242 / 476) * 100}%`,
+        }
+      );
   });
 
   // onMount(() => {});
@@ -125,6 +139,13 @@
         opacity: 1,
         rotateY: 0,
       });
+
+    setInterval(() => {
+      const nx = laptopScreen.frames.indexOf(laptopScreen.current) + 1;
+      laptopScreen.current = laptopScreen.frames.at(
+        nx >= laptopScreen.frames.length ? 0 : nx
+      );
+    }, 4000);
   });
 </script>
 
@@ -141,7 +162,17 @@
     </div>
     <div class="projects flex flex-col items-center gap-y-24 py-8">
       {#each projects as project}
-        <div class="project-card text-primary flex flex-col gap-y-8">
+        <div
+          class="project-card text-primary flex flex-col gap-y-8"
+          on:mouseleave={() => {
+            laptopScreen.frames = [defaultLaptopScreen];
+            laptopScreen.current = laptopScreen.frames[0];
+          }}
+          on:mouseenter={() => {
+            laptopScreen.frames = project.gallery;
+            laptopScreen.current = laptopScreen.frames[0];
+          }}
+        >
           <div
             class="project-heading flex flex-row justify-between items-center"
           >
@@ -164,10 +195,11 @@
           {/each}
           <div class="text-center flex flex-row justify-between px-8">
             {#each [{ title: "source code", data: project.source }, { title: "preview", data: project.demo }] as item}
-              {#if project.source}
+              {#if item.data}
                 <button
-                  data-blobity-tooltip={item.tooltip || "view source code"}
-                  on:click={window.open(item.url)}
+                  data-blobity-tooltip={item.data.tooltip ||
+                    `view ${item.title}`}
+                  on:click={window.open(item.data.url, "__Blanks")}
                 >
                   {item.title}
                 </button>
@@ -182,13 +214,11 @@
     <div
       class="previews sticky top-0 left-1/2 text-primary flex flex-col justify-center items-center h-screen"
     >
-      <div
-        data-tilt
-        class="laptop w-9/12 z-0 bg-contain bg-[url('/laptop.png')]"
-      >
+      <div data-tilt class="laptop w-9/12 z-0">
+        <img class="w-full aspect-auto" src="/laptop.png" alt="placeholder" />
         <img
-          class="laptop-screen"
-          src="/screens/laptop-default.png"
+          class="laptop-screen absolute object-contain bg-black object-center z-[1] rounded"
+          src={laptopScreen.current}
           alt="laptop-screen"
         />
       </div>
