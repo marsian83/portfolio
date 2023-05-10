@@ -2,6 +2,8 @@
   import { afterUpdate, onMount } from "svelte";
 
   export let flip, startColor, endColor;
+
+  let divRef;
   let waves;
   $: colors = ["#ffffff", "#ffffff", "#ffffff", "", "", ""];
 
@@ -78,14 +80,14 @@
   });
 </script>
 
-<div class="overflow-hidden w-full flex flex-row">
+<div class="overflow-hidden" bind:this={divRef}>
   <svg
     class="waves"
     id="waves1"
     bind:this={waves}
     viewBox="0 0 1440 150"
-    width="1440"
     height="150"
+    width="1440"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     version="1.1"
@@ -118,7 +120,6 @@
 <style>
   .waves {
     aspect-ratio: 1440/150;
-    width: 100vw;
     transform: scaleX(120%);
   }
 

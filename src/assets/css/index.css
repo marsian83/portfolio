@@ -4,6 +4,7 @@
 
 body {
   font-family: "Nunito", sans-serif;
+  background-color: pink;
 }
 
 ::-webkit-scrollbar {
