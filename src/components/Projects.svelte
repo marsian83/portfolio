@@ -85,6 +85,10 @@
         {
           opacity: 0,
           filter: "blur(1rem)",
+          left: `${(63 / 500) * 100}%`,
+          top: `150vh`,
+          width: `${(384 / 500) * 100}%`,
+          height: `${(242 / 476) * 100}%`,
         },
         {
           opacity: 1,

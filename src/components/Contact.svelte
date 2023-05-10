@@ -1,12 +1,13 @@
-<section class="relative h-screen bg-black">
+<section class="relative z-0 h-screen bg-black">
   <img
     src="https://img.freepik.com/free-vector/gradient-black-background-with-wavy-lines_23-2149157312.jpg?w=1480&t=st=1683721130~exp=1683721730~hmac=16e8ec1c6eb707932df523cfb88ed09d5b1ad92c3ffcc2201e7652dbf4de7154"
     alt="bg"
     class="absolute top-0 left-0 w-full h-full object-cover opacity-30 -z-[1]"
   />
-  <div class="flex flex-col items-center justify-evenly text-white">
+
+  <div class="flex flex-col h-full items-center justify-evenly text-white">
     <div class="text-center flex flex-col gap-y-4">
-      <h1 class="text-5xl font-bold">Let's Chat</h1>
+      <h1 class="text-7xl font-bold font-sans">Let's Chat</h1>
       <p class="text-opacity-80 text-white font-light">
         Want to discuss the next big thing? Hire me? or develop a project with
         me?
@@ -14,6 +15,12 @@
         I'm just a mail away
       </p>
     </div>
-    <button>Mail Me</button>
+    <button
+      class="bg-white text-black px-10 py-3 text-2xl"
+      on:click={() => {
+        window.open("mailto:contact@marsian.dev");
+      }}
+      data-blobity-tooltip="contact@marsian.dev">Mail Me</button
+    >
   </div>
 </section>
