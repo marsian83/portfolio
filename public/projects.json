@@ -16,7 +16,14 @@
       "type": "devfolio",
       "url": "https://devfolio.co/projects/trustpoint-fca1",
       "tooltip": "view on Devfolio"
-    }
+    },
+    "gallery": [
+      "screens/laptop/trustpoint/1.webp",
+      "screens/laptop/trustpoint/2.webp",
+      "screens/laptop/trustpoint/3.webp",
+      "screens/laptop/trustpoint/4.webp",
+      "screens/laptop/trustpoint/5.webp"
+    ]
   },
   {
     "name": "ShantiTrip Holidays",
@@ -35,7 +42,15 @@
       "type": "website",
       "url": "https://www.ideavaulthk.com",
       "tooltip": "view the live site"
-    }
+    },
+    "gallery": [
+      "/screens/laptop/shantitrip/1.png",
+      "/screens/laptop/shantitrip/2.png",
+      "/screens/laptop/shantitrip/3.png",
+      "/screens/laptop/shantitrip/4.png",
+      "/screens/laptop/shantitrip/5.png",
+      "/screens/laptop/shantitrip/6.png"
+    ]
   },
   {
     "name": "nftcar",
@@ -44,6 +59,12 @@
       "nftcar allows you to invest in NFT Cars and the cars yield you returns and a dividend",
       "MERN stack with typescript was used, talwindCSS was used as a CSS library and Prism was used as an ORM",
       "Solidity was used for smart contracts and the NFTS are ERC-1155 tokens to allow multiple owners"
+    ],
+    "gallery": [
+      "/screens/laptop/nftcar/0.png",
+      "/screens/laptop/nftcar/1.png",
+      "/screens/laptop/nftcar/2.png",
+      "/screens/laptop/nftcar/3.png"
     ],
     "demo": {
       "type": "demo",
@@ -59,6 +80,14 @@
       "React was used with Vite to develop the frontend and TailwindCSS used as CSS library",
       "TypeScript was used for strict typing and ensuring bug free production environment",
       "Admin panel control was provided for allowing dynamically adding content by the client"
+    ],
+    "gallery": [
+      "/screens/laptop/ideavault/0.png",
+      "/screens/laptop/ideavault/1.png",
+      "/screens/laptop/ideavault/4.png",
+      "/screens/laptop/ideavault/5.png",
+      "/screens/laptop/ideavault/2.png",
+      "/screens/laptop/ideavault/3.png"
     ],
     "source": {
       "type": "github",
@@ -110,6 +139,11 @@
       "type": "github",
       "url": "https://github.com/marsian83/MarsEngine-with-physics-simulations"
     },
+    "gallery": [
+      "screens/laptop/marsengine/0.png",
+      "screens/laptop/marsengine/1.png",
+      "screens/laptop/marsengine/2.png"
+    ],
     "demo": {
       "type": "desktop application",
       "url": "https://github.com/marsian83/MarsEngine-with-physics-simulations/archive/refs/heads/main.zip",
