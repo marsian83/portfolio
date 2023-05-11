@@ -25,7 +25,7 @@
 
 <div
   bind:this={name}
-  class="overflow-hidden w-[80vw] h-full flex justify-center items-center mobile:w-[50vw] mobile:overflow-visible"
+  class="overflow-hidden w-[80vw] h-screen mobile:h-full flex justify-center items-center mobile:w-[50vw] mobile:overflow-visible"
 >
   <svg
     id="name"
