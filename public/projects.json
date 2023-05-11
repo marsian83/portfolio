@@ -18,11 +18,11 @@
       "tooltip": "view on Devfolio"
     },
     "gallery": [
-      "screens/laptop/trustpoint/1.webp",
-      "screens/laptop/trustpoint/2.webp",
-      "screens/laptop/trustpoint/3.webp",
-      "screens/laptop/trustpoint/4.webp",
-      "screens/laptop/trustpoint/5.webp"
+      "/screens/laptop/trustpoint/1.webp",
+      "/screens/laptop/trustpoint/2.webp",
+      "/screens/laptop/trustpoint/3.webp",
+      "/screens/laptop/trustpoint/4.webp",
+      "/screens/laptop/trustpoint/5.webp"
     ]
   },
   {
@@ -108,14 +108,14 @@
       "Developed responsive frontend for multiple viewports using Vanilla HTML, CSS and JavaScript."
     ],
     "gallery": [
-      "screens/laptop/marsfood/0.jpg",
-      "screens/laptop/marsfood/1.jpg",
-      "screens/laptop/marsfood/2.jpg",
-      "screens/laptop/marsfood/3.jpg",
-      "screens/laptop/marsfood/4.jpg",
-      "screens/laptop/marsfood/5.jpg",
-      "screens/laptop/marsfood/6.jpg",
-      "screens/laptop/marsfood/7.jpg"
+      "/screens/laptop/marsfood/0.jpg",
+      "/screens/laptop/marsfood/1.jpg",
+      "/screens/laptop/marsfood/2.jpg",
+      "/screens/laptop/marsfood/3.jpg",
+      "/screens/laptop/marsfood/4.jpg",
+      "/screens/laptop/marsfood/5.jpg",
+      "/screens/laptop/marsfood/6.jpg",
+      "/screens/laptop/marsfood/7.jpg"
     ],
     "source": {
       "type": "github",
@@ -140,9 +140,9 @@
       "url": "https://github.com/marsian83/MarsEngine-with-physics-simulations"
     },
     "gallery": [
-      "screens/laptop/marsengine/0.png",
-      "screens/laptop/marsengine/1.png",
-      "screens/laptop/marsengine/2.png"
+      "/screens/laptop/marsengine/0.png",
+      "/screens/laptop/marsengine/1.png",
+      "/screens/laptop/marsengine/2.png"
     ],
     "demo": {
       "type": "desktop application",
