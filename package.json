@@ -19,6 +19,7 @@
   "dependencies": {
     "goojs": "^0.16.7",
     "gsap": "^3.11.4",
+    "svelte-routing": "^1.8.8",
     "vanilla-tilt": "^1.8.0"
   }
 }

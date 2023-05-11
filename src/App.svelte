@@ -1,13 +1,9 @@
 <script>
-  import Hero from "./components/Hero.svelte";
-  import About from "./components/About.svelte";
-  import Skills from "./components/Skills.svelte";
-  import Projects from "./components/Projects.svelte";
   import { onMount } from "svelte";
+  import { Router, Route } from "svelte-routing";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
-  import BeforeAfter from "./components/BeforeAfter.svelte";
-  import Contact from "./components/Contact.svelte";
+  import Home from "./pages/Home.svelte";
   gsap.registerPlugin(ScrollTrigger);
 
   onMount(() => {
@@ -37,14 +33,33 @@
   });
 </script>
 
-<body>
-  <Hero />
-  <Skills />
-  <About />
-  <Projects />
-  <Contact />
-  <!-- <BeforeAfter /> -->
-</body>
+<!-- <body>
+</body> -->
+
+<Router>
+  <Route component={Home} />
+  <Route path="/resume">
+    <script>
+      fetch("/resume.pdf", {
+        method: "get",
+        mode: "no-cors",
+        referrerPolicy: "no-referrer",
+      })
+        .then((res) => res.blob())
+        .then((res) => {
+          const aElement = document.createElement("a");
+          aElement.setAttribute("download", "Spandan-Barve-Resume.pdf");
+          const href = URL.createObjectURL(res);
+          aElement.href = href;
+          // aElement.setAttribute('href', href);
+          aElement.setAttribute("target", "_blank");
+          aElement.click();
+          URL.revokeObjectURL(href);
+          window.location = "/";
+        });
+    </script>
+  </Route>
+</Router>
 
 <style>
 </style>

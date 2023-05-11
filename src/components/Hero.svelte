@@ -38,10 +38,12 @@
   <div class="z-[1] absolute">
     <NameAnimation />
   </div>
-  <div class="skewElem absolute bottom-16 flex flex-col text-primary text-3xl font-bold">
-    <h1>I'm a student at IIIT Gwalior</h1>
+  <div
+    class="skewElem absolute bottom-16 flex flex-col text-primary text-3xl font-bold"
+  >
+    <h1>I also go by Marsian</h1>
     <h1 class="flex flex-row gap-3">
-      <span>and</span> <span>a</span>
+      <span>and</span> <span>I'm</span> <span>a</span>
       <CyclingText
         cycle={[
           "Passionate Programmer",
