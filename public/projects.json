@@ -38,6 +38,20 @@
     }
   },
   {
+    "name": "nftcar",
+    "technology": "MERN Stack Dapp",
+    "highlights": [
+      "nftcar allows you to invest in NFT Cars and the cars yield you returns and a dividend",
+      "MERN stack with typescript was used, talwindCSS was used as a CSS library and Prism was used as an ORM",
+      "Solidity was used for smart contracts and the NFTS are ERC-1155 tokens to allow multiple owners"
+    ],
+    "demo": {
+      "type": "demo",
+      "url": "https://nftcar-spandan.netlify.app",
+      "tooltip": "just a demo site (real site confidential)"
+    }
+  },
+  {
     "name": "Ideavault",
     "technology": "React Website",
     "highlights": [
