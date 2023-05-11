@@ -153,12 +153,12 @@
   });
 </script>
 
-<div class="h-screen bg-background" />
+<div class="h-screen bg-background mobile:hidden" />
 <section
   class="about relative w-full bg-background flex flex-row"
   bind:this={sect}
 >
-  <div class="basis-1/2">
+  <div class="basis-1/2 mobile:basis-full">
     <div
       class="projects-heading text-primary text-center py-10 pt-56 text-4xl font-bold"
     >
@@ -180,21 +180,25 @@
           <div
             class="project-heading flex flex-row justify-between items-center"
           >
-            <h1 class="text-3xl font-bold">
+            <h1 class="text-3xl font-bold mobile:text-2xl">
               {project.name || "Project Name"}
             </h1>
-            <h2 class="text-2xl font-semibold opacity-70 text-end">
+            <h2
+              class="text-2xl font-semibold opacity-70 text-end mobile:text-sm"
+            >
               {project.technology || "How it's Made"}
             </h2>
           </div>
           {#each project.highlights as highlight}
             <div class="project-highlight flex flex-row gap-x-4 items-center">
               <div
-                class="rounded-full bg-[#ffffff44] px-6 aspect-square text-3xl font-black text-primary flex justify-center items-center"
+                class="rounded-full bg-[#ffffff44] px-6 aspect-square text-3xl font-black text-primary flex justify-center items-center mobile:text-lg mobile:px-3"
               >
-                {project.highlights.indexOf(highlight)}
+                {project.highlights.indexOf(highlight) + 1}
               </div>
-              <p class="text-lg opacity-80 font-semibold">{highlight}</p>
+              <p class="text-lg opacity-80 font-semibold mobile:text-sm">
+                {highlight}
+              </p>
             </div>
           {/each}
           <div class="text-center flex flex-row justify-between px-8">
@@ -214,7 +218,7 @@
       {/each}
     </div>
   </div>
-  <div class="relative basis-1/2">
+  <div class="relative basis-1/2 mobile:hidden">
     <div
       class="previews sticky top-0 left-1/2 text-primary flex flex-col justify-center items-center h-screen"
     >

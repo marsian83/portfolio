@@ -25,7 +25,7 @@
 
 <section
   bind:this={sect}
-  class="about bg-black observed relative overflow-hidden"
+  class="about bg-black observed relative overflow-hidden mobile:pointer-events-none"
 >
   {#if entry.isIntersecting}
     <FluidSim />
@@ -34,9 +34,13 @@
   <div
     class="relative text-primary py-16 z-[1] mix-blend-difference pointer-events-none flex flex-col items-center justify-center text-center"
   >
-    <div class="font-bold text-4xl">Get to know me</div>
-    <div class="font-black text-7xl py-8">I CREATE INTERACTIVE WEB DESIGN</div>
-    <div class="py-12 font-semibold text-2xl p-page text-justify">
+    <div class="font-bold text-4xl mobile:text-3xl">Get to know me</div>
+    <div class="font-black text-7xl py-8 mobile:text-4xl">
+      I CREATE INTERACTIVE WEB DESIGN
+    </div>
+    <div
+      class="py-12 font-semibold text-2xl p-page text-justify mobile:py-3 mobile:text-lg"
+    >
       A full-stack developer, having a strong understanding of Python and web
       development. With a long-standing passion for programming and a commitment
       to staying current with the latest technologies, I strive to deliver

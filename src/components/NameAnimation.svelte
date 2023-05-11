@@ -11,19 +11,21 @@
         namePaths[i].getTotalLength()
       );
       namePaths[i].style.setProperty("--anim-delay", `${i * 200}ms`);
-      namePaths[i].addEventListener('mouseenter',()=>{
-        namePaths[i].style.transform=`rotate(${Math.random()*2*(Math.random()<0.5?-1:1)}deg)`
-      })
-      namePaths[i].addEventListener('mouseleave',()=>{
-        namePaths[i].style.transform='rotate(0deg)'
-      })
+      namePaths[i].addEventListener("mouseenter", () => {
+        namePaths[i].style.transform = `rotate(${
+          Math.random() * 2 * (Math.random() < 0.5 ? -1 : 1)
+        }deg)`;
+      });
+      namePaths[i].addEventListener("mouseleave", () => {
+        namePaths[i].style.transform = "rotate(0deg)";
+      });
     }
   });
 </script>
 
 <div
   bind:this={name}
-  class="overflow-hidden w-[80vw] h-screen flex justify-center items-center"
+  class="overflow-hidden w-[80vw] h-full flex justify-center items-center mobile:w-[50vw] mobile:overflow-visible"
 >
   <svg
     id="name"

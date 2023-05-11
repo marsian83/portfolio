@@ -25,7 +25,7 @@
 </script>
 
 <section
-  class="hero h-screen flex flex-col justify-center items-center bg-background"
+  class="hero h-screen flex relative flex-col justify-center items-center bg-background mobile:h-[69vh]"
 >
   <div class="h-full w-full fadeout">
     <FluidSim />
@@ -39,7 +39,7 @@
     <NameAnimation />
   </div>
   <div
-    class="skewElem absolute bottom-16 flex flex-col text-primary text-3xl font-bold"
+    class="skewElem absolute bottom-16 flex flex-col mobile:left-1/2 mobile:-translate-x-full text-primary text-3xl font-bold mobile:text-xl"
   >
     <h1>I also go by Marsian</h1>
     <h1 class="flex flex-row gap-3">
