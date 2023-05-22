@@ -4,7 +4,10 @@
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
   import Home from "./pages/Home.svelte";
+  import { inject } from "@vercel/analytics";
   gsap.registerPlugin(ScrollTrigger);
+
+  inject();
 
   onMount(() => {
     let proxy = { skew: 0 },
