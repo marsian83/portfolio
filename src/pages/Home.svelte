@@ -8,7 +8,6 @@
 </script>
 
 <Hero />
-<ResumeButton />
 <Skills />
 <About />
 <Projects />
