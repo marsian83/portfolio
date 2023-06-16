@@ -36,11 +36,11 @@
     ],
     "source": {
       "type": "github",
-      "url": "https://www.github.com/marsian83/ideavault-website"
+      "url": "https://www.github.com/marsian83/shantitrip-website"
     },
     "demo": {
       "type": "website",
-      "url": "https://www.ideavaulthk.com",
+      "url": "https://www.shantitrip.in",
       "tooltip": "view the live site"
     },
     "gallery": [
