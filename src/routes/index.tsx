@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { ExperienceSection } from '@/components/sections/ExperienceSection'
 import { ProjectsSection } from '@/components/sections/ProjectsSection'
-import { SkillsSection } from '@/components/sections/SkillsSection'
+// import { SkillsSection } from '@/components/sections/SkillsSection'
 import { AchievementsSection } from '@/components/sections/AchievementsSection'
 
 export const Route = createFileRoute('/')({
