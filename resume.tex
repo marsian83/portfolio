@@ -1,0 +1,205 @@
+\documentclass[11pt,a4paper]{article}
+
+% ------------------- PACKAGES -------------------
+\usepackage[margin=1.7cm]{geometry}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+\definecolor{accent}{HTML}{1B5E20} % dark green
+\definecolor{lightaccent}{HTML}{4CAF50}
+
+% ------------------- SECTION STYLE -------------------
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+
+% A green horizontal rule under section titles
+\newcommand{\sectionrule}{\vspace{-2pt}\hrule height 1pt \color{accent}\vspace{4pt}}
+
+% ------------------- HELPER COMMANDS -------------------
+\newenvironment{entry}[2]{
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}
+    \textbf{#1} & {\small #2} \\
+  \end{tabular*}
+}{\vspace{2pt}}
+
+\newcommand{\subentry}[1]{\textit{#1}\\[2pt]}
+
+\newenvironment{itemlist}{
+  \begin{itemize}[leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+}{
+  \end{itemize}
+}
+
+% ------------------- DOCUMENT -------------------
+\begin{document}
+\raggedright
+
+% =================== HEADER ===================
+{\LARGE\bfseries Spandan Barve}\\[3pt]
+{\large\color{accent}Full Stack Blockchain Developer}\\[6pt]
+
+\faEnvelope\hspace{4pt}\href{mailto:contact@marsian.dev}{contact@marsian.dev}
+\hspace{10pt}
+\faEnvelope[regular]\hspace{4pt}\href{mailto:spandan567@gmail.com}{spandan567@gmail.com}
+\hspace{10pt}
+\faGithub\hspace{4pt}\href{https://github.com/marsian83}{github.com/marsian83}
+\hspace{10pt}
+\faLinkedin\hspace{4pt}\href{https://linkedin.com/in/marsian83}{linkedin.com/in/marsian83}
+\hspace{10pt}
+\faGlobe\hspace{4pt}\href{https://marsian.dev}{marsian.dev}
+
+\vspace{8pt}
+
+% =================== SUMMARY ===================
+\section*{Summary}
+\sectionrule
+Software developer with deep expertise in blockchain, full-stack web development, and open-source contributions. Passionate about privacy, security and minimizing regulatory overreach with technology. Ranked among top teams across global Web3 hackathons.
+
+% =================== EXPERIENCE ===================
+\section*{Experience}
+\sectionrule
+
+\begin{entry}{Polkadot Blockchain Academy - PBA 7}{Aug 2025 -- Sept 2025}
+\end{entry}
+\subentry{Polkadot Academy \hfill Bali, Indonesia}
+\begin{itemlist}
+  \item Graduated from the dApps track at PBA Campus, an in-person blockchain development program with instructors from the Polkadot ecosystem and Parity.
+  \item Deep-dived into Polkadot's architecture, Polkadot API, and dApp development with hands-on exercises and mentorship.
+  \item Mastered Papi / Polkadot.js tooling and gained extensive knowledge of Polkadot's inner workings, runtime environment, and cross-chain communication (XCMp).
+\end{itemlist}
+
+\begin{entry}{Google Summer of Code 2024 -- Project Contributor}{May 2024 -- Sept 2024}
+\end{entry}
+\subentry{Sugar Labs \hfill Remote}
+\begin{itemlist}
+  \item Selected among the top 2.7\% of 43{,}984 applicants to develop educational software for the Sugar Labs organisation.
+  \item Developed 8 interactive math and logic activities for Sugar, an open-source desktop environment and learning platform aimed at children's educational growth.
+  \item Utilized Python, GTK+3, Pygame, and custom modules to create engaging, user-friendly learning activities that support cognitive skill development.
+\end{itemlist}
+
+\begin{entry}{Software Architect}{Dec 2023 -- July 2024}
+\end{entry}
+\subentry{MixR.gg \hfill Remote -- Texas, USA}
+\begin{itemlist}
+  \item Designed and led the architecture of a scalable e-commerce platform integrating Shopify via Rye.com, supporting community commerce, rewards, and low-fee transactions.
+  \item Built a seamless Web3 experience using Particle Network for OAuth-based wallet auth, gasless transactions, and NFT-based loyalty passes with ERC-721 and LayerZero bridging.
+  \item Developed a performant backend in Go (Gin) with modular routes for auth, cart, orders, and Stripe sync, including blockchain event handling and admin controls.
+\end{itemlist}
+
+\begin{entry}{LFX Mentorship -- Project Contributor}{Sept 2023 -- Dec 2023}
+\end{entry}
+\subentry{Cloud Native Computing Foundation -- Vitess \hfill Remote}
+\begin{itemlist}
+  \item Designed and implemented a comprehensive Admin Panel to manage performance benchmarks for Vitess (a scalable MySQL database used by YouTube) using Arewefastyet to automatically detect and prevent performance regressions.
+  \item Led a full redesign and rewrite of the web UI, improving user experience and usability for performance monitoring.
+  \item Utilized Gin framework for server-side development, with React, TypeScript, and Tailwind CSS on the client-side to deliver a seamless, responsive, and modern interface.
+\end{itemlist}
+
+\begin{entry}{Frontend and Tooling Engineer}{Aug 2023 -- Dec 2023}
+\end{entry}
+\subentry{TalentLayer \hfill Remote}
+\begin{itemlist}
+  \item Developed a robust SDK and a suite of developer tools to facilitate the creation of hiring marketplaces and talent pools using TalentLayer's open Web3 protocol.
+  \item Built a reusable React components library to streamline development and enhance user experience across projects, keeping in mind compatibility across various JavaScript runtimes.
+  \item Designed the SDK for fully type-safe interactions with the underlying graph, providing developers with a simplified and abstracted interface for seamless integration.
+\end{itemlist}
+
+% =================== PROJECTS ===================
+\section*{Projects}
+\sectionrule
+
+\begin{entry}{Filosign}{}
+\end{entry}
+\subentry{Trustless On-Chain E-Signature Platform}
+\begin{itemlist}
+  \item On-chain e-signature platform replacing platform risk of centralized services with a permanent, verifiable ledger built on F(E)VM and Filecoin Onchain Cloud.
+  \item Features irrevocable signatures as permanent blockchain transactions, end-to-end encryption using Kyber KEM, and post-quantum secure signatures using Dilithium.
+  \item Built with React 19, Tailwind CSS, and shadcn/ui for the frontend; Solidity smart contracts deployed on Filecoin FVM (FSManager, FSFileRegistry, FSKeyRegistry).
+  \item Implements PIN (with Argon2id) + wallet-signature-based HKDF key generation and XChaCha20-Poly1305 encryption; integrates Synapse SDK + FilCDN for decentralized storage and retrieval.
+\end{itemlist}
+
+\begin{entry}{Haithe}{}
+\end{entry}
+\subentry{Decentralized AI Marketplace Ecosystem}
+\begin{itemlist}
+  \item Decentralized AI marketplace combining blockchain with advanced AI orchestration for a trustless, composable, and monetizable platform.
+  \item Enables creation and deployment of AI agents with multi-model support (GPT, Ollama, DeepSeek, etc.) with a marketplace for buying/selling AI components (knowledge bases, tools, prompt sets) and USDT-based transparent payments.
+  \item Rust (Actix) based server with Alith agentic framework for AI orchestration on the backend; Solidity smart contracts deployed on Metis Hyperion Testnet.
+  \item Features multi-tenant organization system with role-based access control, exposes OpenAI-compatible APIs, and automated creator revenue distribution (pay-per-call system) via smart contracts.
+\end{itemlist}
+
+\begin{entry}{JustInsure}{}
+\end{entry}
+\subentry{Decentralized Insurance Marketplace Platform}
+\begin{itemlist}
+  \item Enables users to create, manage, and claim insurance policies without intermediaries, enhancing transparency and reducing disputes through blockchain-based smart contracts.
+  \item Supports gasless meta transactions for policy-related activities, while ensuring secure client-server communications through ECDSA signatures. Provides an integrated cloud-based Python execution environment (self-hosted) for remote code execution.
+  \item Built with React, TypeScript, and Tailwind CSS on the frontend; Deno, Express, and Mongoose on the backend; and Solidity with Hardhat for smart contract development, with integrations like Pinata.cloud and OpenZeppelin for enhanced functionality.
+\end{itemlist}
+
+\begin{entry}{PumpFaxt}{}
+\end{entry}
+\subentry{Token Launchpad}
+\begin{itemlist}
+  \item Platform for launching ERC20 tokens, utilizing account abstraction and meta transactions to enhance user experience and improve user onboarding.
+  \item Uses AMM bonding-curve methodologies for dynamic price determination and virtualLiquidity for price assignment without relying on real liquidity.
+  \item Implements data management solutions to efficiently store fast-moving data streams like price history.
+  \item Ensures security and compliance by developing smart contracts aligned with the latest OpenZeppelin standards and a custom implementation for meta transactions inspired by the EIP4773 paper.
+\end{itemlist}
+
+\begin{entry}{Echo}{}
+\end{entry}
+\subentry{The All-Encompassing Hub for EduChain}
+\begin{itemlist}
+  \item Central interface for all on-chain needs for the Open Campus network by Animoca Brands.
+  \item Developed a customizable dashboard to display metrics for EDU performance, portfolio, token holdings, and a Proof of Humanity protocol to measure user authenticity based on factors such as Gitcoin score and on-chain activities.
+  \item Created a decentralized exchange (DEX) for EduChain using the Uniswap V3 protocol and facilitating cross-chain swaps using LayerZero, including a token launchpad for seamless listing.
+  \item Implemented support for various NFT types, including ERC721 NFTs, locked-content NFTs, and on-chain academic records, along with an intuitive NFT marketplace for buying and selling digital assets.
+\end{itemlist}
+
+\begin{entry}{OnePanel}{}
+\end{entry}
+\subentry{Admin Panel as a Service}
+\begin{itemlist}
+  \item Developed an admin panel as a service for non-technical users to add and manage their application data efficiently, providing developers with the ability to define data structures and schema for their projects.
+  \item Implemented secure data handling and access-control mechanisms within the admin panel with exposed API endpoints to enable developers to use the data with their preferred architecture plans.
+  \item Built using Golang for microservices and React for the GUI.
+\end{itemlist}
+
+% =================== ACHIEVEMENTS ===================
+\section*{Achievements}
+\sectionrule
+
+\begin{itemlist}
+  \item \textbf{Metis HyperHack (2024)} -- Won the hackathon with \textit{Haithe}, a decentralized AI marketplace ecosystem built on Metis L2.
+  \item \textbf{Tron Grand HackaTron -- Season 7 (Sept -- Nov 2024)} -- Third prize in the DeFi track and fourth prize in the community track among 1300+ participants with \textit{JustInsure}.
+  \item \textbf{Opencampus Educhain Hackathon -- Semester 1 (July -- Aug 2024)} -- 8th prize in the Infra track among 700+ projects and 4500+ participants with \textit{Echo}. Featured in Forbes Web3.
+  \item \textbf{Fraxtal Hackathon (May -- July 2024)} -- Third prize of the Mainnet track with \textit{PumpFaxt}.
+  \item \textbf{EthOxford (March 2024)} -- Won the main track of Decentralized Social Media and Gaming, along with two sponsor prizes from Solana and Bitso with \textit{Loxel}.
+  \item \textbf{Avalanche Frontier Hackathon 2024 (Jan -- March 2024)} -- Stood a winner among 440+ participants and 150+ projects with \textit{Nest}.
+  \item \textbf{Web5: Building the Decentralized Web (Jan 2024)} -- Won the Best Empowerment \& Enablement Inspired App among 1500+ participants with \textit{FifthPoll}.
+  \item \textbf{EthOxford (Feb 2025)} -- Won the pool prize for the Flare: Enshrined Data Protocols track with \textit{Radio}.
+  \item \textbf{Lambda Hack Week (July 2024)} -- Second prize overall from Lambda Week, second prize from Node101, and User Key Management prize from Dora Factory track with \textit{Maci Keychain}.
+  \item \textbf{Chainlink Spring Hackathon (April -- June 2023)} -- Chainlink Tech for Good 2nd Prize among 2500+ participants and 500+ projects with \textit{AgroSurance}.
+  \item \textbf{EthforAll (Feb 2023)} -- Best Gaming and NFT track by Mantle among 400+ projects with \textit{TrustPoint}.
+\end{itemlist}
+
+\end{document}
