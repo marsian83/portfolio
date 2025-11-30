@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&: is(.dark *));
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 0%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 0%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 0%);
+  --primary: hsl(0 0% 0%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(0 0% 96%);
+  --secondary-foreground: hsl(0 0% 0%);
+  --muted: hsl(0 0% 96%);
+  --muted-foreground: hsl(0 0% 45%);
+  --accent: hsl(0 0% 96%);
+  --accent-foreground: hsl(0 0% 0%);
+  --destructive: hsl(0 0% 0%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(0 0% 90%);
+  --input: hsl(0 0% 90%);
+  --ring: hsl(0 0% 0%);
+  --chart-1: hsl(0 0% 0%);
+  --chart-2: hsl(0 0% 0%);
+  --chart-3: hsl(0 0% 0%);
+  --chart-4: hsl(0 0% 0%);
+  --chart-5: hsl(0 0% 0%);
+  --radius: 0.5rem;
+  --sidebar-background: hsl(0 0% 100%);
+  --sidebar-foreground: hsl(0 0% 0%);
+  --sidebar-primary: hsl(0 0% 0%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(0 0% 96%);
+  --sidebar-accent-foreground: hsl(0 0% 0%);
+  --sidebar-border: hsl(0 0% 90%);
+  --sidebar-ring: hsl(0 0% 0%);
+  --sidebar: hsl(0 0% 100%);
+
+  --grey-50: #fafafa;
+  --grey-100: #f5f5f5;
+  --grey-200: #e5e5e5;
+  --grey-300: #d4d4d4;
+  --grey-400: #a3a3a3;
+  --grey-500: #737373;
+  --grey-600: #525252;
+  --grey-700: #404040;
+  --grey-800: #262626;
+  --grey-900: #171717;
+  --grey-950: #0a0a0a;
+}
+
+.dark {
+  --background: hsl(240 8% 6%);
+  --foreground: hsl(0 0% 92%);
+  --card: hsl(240 8% 6%);
+  --card-foreground: hsl(0 0% 92%);
+  --popover: hsl(240 8% 6%);
+  --popover-foreground: hsl(0 0% 92%);
+  --primary: hsl(0 0% 92%);
+  --primary-foreground: hsl(240 5% 18%);
+  --secondary: hsl(240 3% 18%);
+  --secondary-foreground: hsl(0 0% 92%);
+  --muted: hsl(240 3% 18%);
+  --muted-foreground: hsl(240 4% 60%);
+  --accent: hsl(240 3% 18%);
+  --accent-foreground: hsl(0 0% 92%);
+  --destructive: hsl(0 58% 35%);
+  --destructive-foreground: hsl(0 0% 92%);
+  --border: hsl(240 3% 18%);
+  --input: hsl(240 3% 18%);
+  --ring: hsl(240 4% 80%);
+  --chart-1: hsl(220 65% 52%);
+  --chart-2: hsl(160 55% 48%);
+  --chart-3: hsl(30 75% 58%);
+  --chart-4: hsl(280 60% 62%);
+  --chart-5: hsl(340 70% 58%);
+  --sidebar-background: hsl(240 5% 12%);
+  --sidebar-foreground: hsl(240 4% 90%);
+  --sidebar-primary: hsl(224.3 70% 50%);
+  --sidebar-primary-foreground: hsl(0 0% 95%);
+  --sidebar-accent: hsl(240 3% 18%);
+  --sidebar-accent-foreground: hsl(240 4% 90%);
+  --sidebar-border: hsl(240 3% 18%);
+  --sidebar-ring: hsl(217.2 85% 55%);
+  --sidebar: hsl(240 5% 12%);
+  
+  --grey-50: #f7f7f7;
+  --grey-100: #f0f0f0;
+  --grey-200: #e0e0e0;
+  --grey-300: #cccccc;
+  --grey-400: #a0a0a0;
+  --grey-500: #7a7a7a;
+  --grey-600: #5a5a5a;
+  --grey-700: #4a4a4a;
+  --grey-800: #363636;
+  --grey-900: #262626;
+  --grey-950: #1a1a1a;
+}
+
+@theme inline {
+  --font-roboto-slab: "Roboto Slab", serif;
+
+  --color-grey-50: var(--grey-50);
+  --color-grey-100: var(--grey-100);
+  --color-grey-200: var(--grey-200);
+  --color-grey-300: var(--grey-300);
+  --color-grey-400: var(--grey-400);
+  --color-grey-500: var(--grey-500);
+  --color-grey-600: var(--grey-600);
+  --color-grey-700: var(--grey-700);
+  --color-grey-800: var(--grey-800);
+  --color-grey-900: var(--grey-900);
+  --color-grey-950: var(--grey-950);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar-background);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50 font-roboto-slab;
+    scrollbar-width: thin;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Roboto Slab', serif;
+  }
+  h1, h2, h3 {
+    @apply font-medium;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@utility glass {
+  @apply backdrop-filter backdrop-blur-[8px];
+}
+
+@utility dotted-pattern {
+  background-image: radial-gradient(var(--color-zinc-300) 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem;
+}
